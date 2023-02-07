@@ -1,9 +1,13 @@
 using UnityEngine;
 
-public interface IInteractable 
+namespace ToasterGames
 {
-	void Interact()
+	public interface IInteractable
 	{
-		Debug.Log("I interacteble");
+		void Interact()
+		{
+			Debug.Log("I interacteble");
+		}
 	}
 }
+
