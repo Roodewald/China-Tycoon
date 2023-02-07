@@ -5,7 +5,6 @@ namespace ToasterGames
 {
 	public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
 	{
-
 		public static RewardedAds instance;
 
 		private static string andriodAdId = "Interstitial_Android";
@@ -32,7 +31,7 @@ namespace ToasterGames
 
 		public void OnUnityAdsAdLoaded(string placementId)
 		{
-			throw new System.NotImplementedException();
+			Debug.Log("Ad loaded" + placementId);
 		}
 
 		public void OnUnityAdsFailedToLoad(string placementId, UnityAdsLoadError error, string message)
