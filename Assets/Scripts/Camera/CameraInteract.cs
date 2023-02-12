@@ -6,18 +6,24 @@ namespace ToasterGames
 	{
 		private void Update()
 		{
-			if (Input.touchCount == 1)
+			if (Input.touchCount > 0)
 			{
-				if (Input.GetTouch(0).phase == TouchPhase.Stationary)
+				Touch touch = Input.GetTouch(0);
+
+				if (touch.phase == TouchPhase.Began)
 				{
 					RaycastHit hit;
-					Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+					Ray ray = Camera.main.ScreenPointToRay(touch.position);
 
 					if (Physics.Raycast(ray, out hit))
 					{
 						if (hit.transform.GetComponent<IInteractable>() != null)
 						{
 							hit.transform.GetComponent<IInteractable>().Interact();
+						}
+						else
+						{
+							UIManager.instance.Interact(false);
 						}
 					}
 				}

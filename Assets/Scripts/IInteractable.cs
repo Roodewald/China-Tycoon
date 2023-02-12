@@ -6,7 +6,7 @@ namespace ToasterGames
 	{
 		void Interact()
 		{
-			Debug.Log("I interacteble");
+			UIManager.instance.Interact(true);
 		}
 	}
 }
