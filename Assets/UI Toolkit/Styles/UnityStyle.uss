@@ -1,0 +1,8 @@
+.MoneyLebleText {
+    font-size: 50px;
+    -unity-text-align: middle-center;
+    -unity-font: url('project://database/Assets/Icon/Rounds.ttf?fileID=12800000&guid=1968433bfa4b556458f93b68f96887a2&type=3#Rounds');
+    padding-right: 20px;
+    padding-left: 5px;
+    color: rgba(255, 255, 255, 255);
+}

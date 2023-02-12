@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 namespace ToasterGames
@@ -15,6 +16,7 @@ namespace ToasterGames
 
 		private void LateUpdate()
 		{
+			targetPosition= transform.position;
 			MooveCamera();
 		}
 

@@ -1,0 +1,16 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/UnityStyle.uss?fileID=7433441132597879392&amp;guid=d8ec916c70ac55d46a1c5158e478c8c9&amp;type=3#UnityStyle" />
+    <ui:VisualElement style="flex-direction: row; margin-left: 25px; margin-right: 0; margin-top: 50px; margin-bottom: 0; -unity-font-definition: none; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;">
+        <ui:VisualElement style="flex-direction: row; background-color: rgba(0, 0, 0, 0.32); border-top-left-radius: 25px; border-bottom-left-radius: 25px; border-top-right-radius: 25px; border-bottom-right-radius: 25px; opacity: 1; padding-left: 28px; padding-right: 28px; padding-top: 28px; padding-bottom: 28px;">
+            <ui:VisualElement name="MoneyElement" style="flex-direction: row;">
+                <ui:VisualElement name="MoneyIcon" style="background-image: url(&apos;project://database/Assets/Icon/dollar.png?fileID=21300000&amp;guid=0ac69bb42d2295b438df307d03f9ffc7&amp;type=3#dollar&apos;); width: 75px; height: 75px; -unity-background-scale-mode: stretch-to-fill;" />
+                <ui:Label text="128" display-tooltip-when-elided="true" name="MoneyText" class="MoneyLebleText" style="justify-content: flex-start; -unity-text-align: middle-center; font-size: 50px; -unity-font: url(&apos;project://database/Assets/Icon/Rounds.ttf?fileID=12800000&amp;guid=1968433bfa4b556458f93b68f96887a2&amp;type=3#Rounds&apos;); -unity-font-style: normal; padding-left: 5px; display: flex; opacity: 1; visibility: visible; overflow: visible;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="DiamondElement" style="flex-direction: row; align-items: stretch; justify-content: flex-start; -unity-text-align: middle-center;">
+                <ui:VisualElement name="DiamondIcon" style="background-image: url(&apos;project://database/Assets/Icon/diamond.png?fileID=21300000&amp;guid=b0fdeac85e98fd343b36756c660fec4a&amp;type=3#diamond&apos;); width: 75px; height: 75px;" />
+                <ui:Label text="100" display-tooltip-when-elided="true" name="Label" class="MoneyLebleText" />
+            </ui:VisualElement>
+            <ui:Button display-tooltip-when-elided="true" enable-rich-text="false" focusable="true" name="OpenShop" style="background-image: url(&apos;project://database/Assets/Icon/plus.png?fileID=21300000&amp;guid=1259db81d2d201d4a8043d118223ecfe&amp;type=3#plus&apos;); margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; border-top-left-radius: 0; border-bottom-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; border-left-color: rgba(255, 255, 255, 0); border-right-color: rgba(48, 48, 48, 0); border-top-color: rgba(48, 48, 48, 0); border-bottom-color: rgba(36, 36, 36, 0); -unity-background-scale-mode: scale-to-fit; overflow: hidden; opacity: 1; width: 75px; height: 75px; -unity-text-align: upper-center;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
