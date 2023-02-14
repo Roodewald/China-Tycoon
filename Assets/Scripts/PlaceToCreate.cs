@@ -8,7 +8,11 @@ namespace ToasterGames
 		{
 			if (Input.touchCount == 3)
 			{
-				InternalAds.instance.ShowAd();
+				CameraController.Instance.SetShowingObject(gameObject);
+			}
+			if (Input.touchCount == 4)
+			{
+				CameraController.Instance.ResetCamera();
 			}
 		}
 	}

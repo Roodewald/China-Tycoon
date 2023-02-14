@@ -7,15 +7,8 @@ namespace ToasterGames
 	{
 		private void Update()
 		{
-		
-
-			if (Input.touchCount > 0)
+			if (Input.touchCount > 0 && !EventSystem.current.IsPointerOverGameObject(0))
 			{
-
-				if (EventSystem.current.IsPointerOverGameObject(0))
-				{
-					Debug.Log("Touch UI");
-				} 
 
 				Touch touch = Input.GetTouch(0);
 

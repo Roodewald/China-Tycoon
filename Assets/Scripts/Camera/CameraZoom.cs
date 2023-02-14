@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace ToasterGames
@@ -10,7 +8,8 @@ namespace ToasterGames
 		public float zoomMin;
 		public float sensitivity;
 
-		[SerializeField]private Camera cameraRig;
+		[SerializeField] private float zoomChangeDuration = 0.2f;
+		[SerializeField] private Camera cameraRig;
 
 		private Touch touchA;
 		private Touch touchB;
@@ -19,6 +18,12 @@ namespace ToasterGames
 		private float distanceBtwTouchesPosition;
 		private float distanceBtwTouchesDirections;
 		private float zoom;
+		public float curretZoom = 60;
+		private float curretTime;
+		private bool zoomChanging = false;
+		private float targetZoom;
+
+
 
 		private void Update()
 		{
@@ -31,14 +36,36 @@ namespace ToasterGames
 				touchBDirection = touchB.position - touchB.deltaPosition;
 
 				distanceBtwTouchesPosition = Vector2.Distance(touchA.position, touchB.position);
-				distanceBtwTouchesDirections = Vector2.Distance(touchADirection,touchBDirection);
+				distanceBtwTouchesDirections = Vector2.Distance(touchADirection, touchBDirection);
 
 				zoom = distanceBtwTouchesPosition - distanceBtwTouchesDirections;
 
-				var curretZoom = cameraRig.fieldOfView - zoom * sensitivity;
-
+				curretZoom = cameraRig.fieldOfView - zoom * sensitivity;
 				cameraRig.fieldOfView = Mathf.Clamp(curretZoom, zoomMin, zoomMax);
+			}
+			if (zoomChanging)
+			{
+				ChangeZoom();
+			}
 
+		}
+
+		public float GetCuretZoom() => curretZoom;
+
+		public void SetZoom(float _targetZoom)
+		{
+			zoomChanging = true;
+			targetZoom = _targetZoom;
+		}
+
+		private void ChangeZoom()
+		{
+			curretTime += Time.deltaTime;
+			cameraRig.fieldOfView = Mathf.Lerp(curretZoom, targetZoom, curretTime / zoomChangeDuration);
+			if (curretTime >= zoomChangeDuration)
+			{
+				zoomChanging = false;
+				curretTime = 0;
 			}
 		}
 	}

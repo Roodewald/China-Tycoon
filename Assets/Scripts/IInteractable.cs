@@ -6,7 +6,7 @@ namespace ToasterGames
 	{
 		void Interact()
 		{
-		
+
 		}
 	}
 }
