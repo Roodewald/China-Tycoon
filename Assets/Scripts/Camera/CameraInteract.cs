@@ -5,11 +5,11 @@ namespace ToasterGames
 {
 	public class CameraInteract : MonoBehaviour
 	{
+		private bool inUpgrade = false;
 		private void Update()
 		{
 			if (Input.touchCount > 0 && !EventSystem.current.IsPointerOverGameObject(0))
 			{
-
 				Touch touch = Input.GetTouch(0);
 
 				if (touch.phase == TouchPhase.Began)
@@ -22,10 +22,25 @@ namespace ToasterGames
 						if (hit.transform.GetComponent<IInteractable>() != null)
 						{
 							hit.transform.GetComponent<IInteractable>().Interact();
+							inUpgrade = true;
 						}
-						
+						else
+						{
+							ResetCamera();
+						}
 					}
+
 				}
+			}
+		}
+
+		private void ResetCamera()
+		{
+			if (inUpgrade)
+			{
+				CameraController.instance.ResetCamera();
+				UIManager.Instance.SetActivePanel(0);
+				inUpgrade= false;
 			}
 		}
 	}

@@ -62,6 +62,7 @@ namespace ToasterGames
 		{
 			curretTime += Time.deltaTime;
 			cameraRig.fieldOfView = Mathf.Lerp(curretZoom, targetZoom, curretTime / zoomChangeDuration);
+			curretZoom = cameraRig.fieldOfView;
 			if (curretTime >= zoomChangeDuration)
 			{
 				zoomChanging = false;
