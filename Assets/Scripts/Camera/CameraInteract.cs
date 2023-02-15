@@ -8,6 +8,8 @@ namespace ToasterGames
 		private bool inUpgrade = false;
 		private void Update()
 		{
+			Debug.Log(1/Time.deltaTime);
+
 			if (Input.touchCount > 0 && !EventSystem.current.IsPointerOverGameObject(0))
 			{
 				Touch touch = Input.GetTouch(0);
@@ -39,7 +41,6 @@ namespace ToasterGames
 			if (inUpgrade)
 			{
 				CameraController.instance.ResetCamera();
-				UIManager.Instance.SetActivePanel(0);
 				inUpgrade= false;
 			}
 		}

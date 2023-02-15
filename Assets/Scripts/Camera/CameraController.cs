@@ -39,6 +39,7 @@ namespace ToasterGames
 			cameraMover.folowingObject = null;
 			cameraMover.showingObject = null;
 			cameraZoom.SetZoom(60f);
+			UIManager.Instance.SetActivePanel(0);
 		}
 	}
 }
