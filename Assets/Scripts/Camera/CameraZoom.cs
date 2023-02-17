@@ -7,6 +7,7 @@ namespace ToasterGames
 		public float zoomMax;
 		public float zoomMin;
 		public float sensitivity;
+		public float curretZoom = 60;
 
 		[SerializeField] private float zoomChangeDuration = 0.2f;
 		[SerializeField] private Camera cameraRig;
@@ -18,7 +19,6 @@ namespace ToasterGames
 		private float distanceBtwTouchesPosition;
 		private float distanceBtwTouchesDirections;
 		private float zoom;
-		public float curretZoom = 60;
 		private float curretTime;
 		private bool zoomChanging = false;
 		private float targetZoom;
@@ -50,7 +50,6 @@ namespace ToasterGames
 
 		}
 
-		public float GetCuretZoom() => curretZoom;
 
 		public void SetZoom(float _targetZoom)
 		{
@@ -69,5 +68,7 @@ namespace ToasterGames
 				curretTime = 0;
 			}
 		}
+
+		public float GetCuretZoom() => curretZoom;
 	}
 }
