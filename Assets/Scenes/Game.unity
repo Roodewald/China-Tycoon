@@ -3050,6 +3050,7 @@ GameObject:
   - component: {fileID: 905794655}
   - component: {fileID: 905794654}
   - component: {fileID: 905794653}
+  - component: {fileID: 905794656}
   m_Layer: 5
   m_Name: Skip Ad
   m_TagString: Untagged
@@ -3120,7 +3121,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 905794654}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 905794656}
+        m_TargetAssemblyTypeName: Google, Assembly-CSharp
+        m_MethodName: ShowRewardedAd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &905794654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3159,6 +3172,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 905794651}
   m_CullTransparentMesh: 1
+--- !u!114 &905794656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905794651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43cadfae9d535a2458c1930db13737d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &930301470
 GameObject:
   m_ObjectHideFlags: 0
@@ -5975,9 +6000,9 @@ MonoBehaviour:
   zoomMax: 80
   zoomMin: 40
   sensitivity: 0.06
+  curretZoom: 60
   zoomChangeDuration: 0.4
   cameraRig: {fileID: 824253330}
-  curretZoom: 60
 --- !u!114 &1635663585
 MonoBehaviour:
   m_ObjectHideFlags: 0
