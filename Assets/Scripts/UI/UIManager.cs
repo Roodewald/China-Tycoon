@@ -5,6 +5,7 @@ namespace ToasterGames
 	public class UIManager : MonoBehaviour
 	{
 		public static UIManager Instance;
+		public UIContent uIContent;
 
 		[SerializeField] private GameObject[] panels;
 
@@ -12,6 +13,7 @@ namespace ToasterGames
 		private void Awake()
 		{
 			Instance = this;
+			SetActivePanel(0);
 		}
 
 		public void SetActivePanel(int targetPanel)

@@ -5,12 +5,21 @@ namespace ToasterGames
 	public class Room : MonoBehaviour, IInteractable
 	{
 		public string roomName;
+		public Bench[] benchs;
 
-		public GameObject[] benchs;
+		private UIManager uIManager;
+
+		private void Start()
+		{
+			uIManager = UIManager.Instance;
+		}
 
 		public void Interact()
 		{
-			UIManager.Instance.SetActivePanel(1);
+			uIManager.SetActivePanel(1);
+
+			uIManager.uIContent.CreateContentButton(benchs);
+
 			CameraController.instance.SetShowingObject(gameObject);
 		}
 	}
