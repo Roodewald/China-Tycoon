@@ -22,6 +22,7 @@ namespace ToasterGames
 			{
 				panel.SetActive(false);
 			}
+			uIContent.DeliteUpgratables();
 			panels[targetPanel].SetActive(true);
 		}
 

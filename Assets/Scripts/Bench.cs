@@ -2,16 +2,8 @@ using UnityEngine;
 
 namespace ToasterGames
 {
-	public class Bench : MonoBehaviour
+	public class Bench : Upgradable 
 	{
-		public string benchName;
-		public string discription;
-
-		public int level;
-		public bool created;
-
-
-		
 
 	}
 

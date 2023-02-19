@@ -30,7 +30,7 @@ namespace ToasterGames
 			cameraMover.showingObject = _showingObject;
 			Vector3 targetPostition = _showingObject.transform.position;
 			cameraZoom.SetZoom(40f);
-			cameraMover.targetPosition = new Vector3(targetPostition.x + distanceToShowingObject, targetPostition.y, targetPostition.z - distanceToShowingObject);
+			cameraMover.targetPosition = new Vector3(targetPostition.x, targetPostition.y, targetPostition.z - distanceToShowingObject);
 
 		}
 
