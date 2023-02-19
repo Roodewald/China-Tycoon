@@ -54,4 +54,9 @@ public class MyIAPManager : IStoreListener
 	public void OnPurchaseFailed(Product i, PurchaseFailureReason p)
 	{
 	}
+
+	public void OnInitializeFailed(InitializationFailureReason error, string message)
+	{
+		throw new System.NotImplementedException();
+	}
 }
