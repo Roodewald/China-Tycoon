@@ -18,7 +18,7 @@ namespace ToasterGames
 		{
 			uIManager.SetActivePanel(1);
 
-			uIManager.uIContent.CreateContentButton(benchs);
+			uIManager.uIContent.CreateContentButton(benchs,roomName);
 
 			CameraController.instance.SetShowingObject(gameObject);
 		}

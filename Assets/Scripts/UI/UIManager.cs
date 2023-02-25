@@ -6,6 +6,8 @@ namespace ToasterGames
 	{
 		public static UIManager Instance;
 		public UIContent uIContent;
+		public UIMoneyPanel uIMoneyPanel;
+		
 
 		[SerializeField] private GameObject[] panels;
 

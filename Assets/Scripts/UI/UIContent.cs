@@ -11,11 +11,12 @@ namespace ToasterGames
 		public Transform contentTransform;
 		private List<Content> contentCreatedPrefab = new List<Content>();
 		[SerializeField] private TMP_Text upgradableName;
+		[SerializeField] private TMP_Text roomName;
 		[SerializeField] private TMP_Text upgradableDiscription;
 		[SerializeField] private TMP_Text upgradableLevel;
 		[SerializeField] private Image upgradableIcon;
 
-		public void CreateContentButton(Upgradable[] upgradables)
+		public void CreateContentButton(Upgradable[] upgradables, string _roomName)
 		{
 			if (upgradables != null)
 			{
@@ -28,6 +29,7 @@ namespace ToasterGames
 				contentCreatedPrefab[0].button.Select();
 				contentCreatedPrefab[0].OnClick();
 			}
+			roomName.text = _roomName;
 		}
 
 		public void UpdateName(Upgradable upgradable)

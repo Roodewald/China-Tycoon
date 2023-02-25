@@ -1497,6 +1497,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 852039305}
+  - component: {fileID: 852039306}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1519,6 +1520,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &852039306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852039304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 328353201df34ef4a8575857d8619a86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uIManager: {fileID: 1632068957}
 --- !u!1001 &873736243
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2048,6 +2062,7 @@ GameObject:
   - component: {fileID: 934943227}
   - component: {fileID: 934943229}
   - component: {fileID: 934943228}
+  - component: {fileID: 934943230}
   m_Layer: 5
   m_Name: MoneyPanel
   m_TagString: Untagged
@@ -2116,6 +2131,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 934943226}
   m_CullTransparentMesh: 1
+--- !u!114 &934943230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934943226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e352c9d9a2f53654d81fa3c64f4a8f0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money: {fileID: 1345122555}
+  diamonds: {fileID: 1860738652}
 --- !u!1 &1018117682
 GameObject:
   m_ObjectHideFlags: 0
@@ -3616,6 +3645,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uIContent: {fileID: 1634954149}
+  uIMoneyPanel: {fileID: 934943230}
   panels:
   - {fileID: 930301470}
   - {fileID: 1634954147}
@@ -3673,6 +3703,7 @@ MonoBehaviour:
     type: 3}
   contentTransform: {fileID: 1080823450}
   upgradableName: {fileID: 1962751623}
+  roomName: {fileID: 2108913837}
   upgradableDiscription: {fileID: 1482441397}
   upgradableLevel: {fileID: 1844455409}
   upgradableIcon: {fileID: 1167418600}
@@ -4620,7 +4651,7 @@ GameObject:
   - component: {fileID: 2108913838}
   - component: {fileID: 2108913837}
   m_Layer: 5
-  m_Name: Name
+  m_Name: Room Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
