@@ -18,6 +18,7 @@ namespace ToasterGames
 		public void OnClick()
 		{
 			UIManager.Instance.uIContent.UpdateName(upgradable);
+			button.Select();
 		}
 	}
 }
