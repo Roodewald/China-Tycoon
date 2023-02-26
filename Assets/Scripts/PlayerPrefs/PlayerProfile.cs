@@ -22,8 +22,8 @@ namespace ToasterGames
 		private void Load()
 		{
 			var data = SaveManager.Load<PlayerProfileData>(saveKey);
-			wallet.SetCureentMoney(data.curretMoney);
-			wallet.SetCurretDiamonds(data.curretDiamonds);
+			wallet.SetCureentMoney(data.currentMoney);
+			wallet.SetCurretDiamonds(data.currentDiamonds);
 			wallet.SetShowAD(data.showAD);
 			UpdateUI();
 
@@ -38,8 +38,8 @@ namespace ToasterGames
 		{
 			var data = new PlayerProfileData()
 			{
-				curretMoney = wallet.GetCurretMoney(),
-				curretDiamonds = wallet.GetCurretDiamonds(),
+				currentMoney = wallet.GetCurretMoney(),
+				currentDiamonds = wallet.GetCurretDiamonds(),
 				showAD = wallet.GetShowingAD()
 			};
 			return data;

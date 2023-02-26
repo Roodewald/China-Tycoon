@@ -76,5 +76,4 @@ namespace ToasterGames
 			UpdateName(selectedUpgradable);
 		}
 	}
-
 }

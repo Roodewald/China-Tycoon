@@ -3,17 +3,17 @@ using UnityEngine;
 namespace ToasterGames
 {
 	[System.Serializable]
-	public class PlayerProfileData : MonoBehaviour
+	public class PlayerProfileData
 	{
 
-		public int curretMoney;
-		public int curretDiamonds;
+		public int currentMoney;
+		public int currentDiamonds;
 		public bool showAD;
 	
 		public PlayerProfileData()
 		{
-			curretMoney = 100;
-			curretDiamonds = 10;
+			currentMoney = 100;
+			currentDiamonds = 10;
 			showAD = true;
 		}
 	}
