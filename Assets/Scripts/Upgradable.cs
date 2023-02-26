@@ -13,6 +13,10 @@ namespace ToasterGames
 
 		public Sprite icon;
 
+		public void Upgrate()
+		{
+			level++;
+		}
 	}
 
 }

@@ -1,6 +1,6 @@
-using UnityEngine;
-using TMPro;
 using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace ToasterGames
@@ -15,6 +15,11 @@ namespace ToasterGames
 		[SerializeField] private TMP_Text upgradableDiscription;
 		[SerializeField] private TMP_Text upgradableLevel;
 		[SerializeField] private Image upgradableIcon;
+		[SerializeField] private Button upgrateButton;
+		[SerializeField] private TMP_Text upgratePrice;
+		[SerializeField] private Wallet wallet;
+
+		private Upgradable selectedUpgradable;
 
 		public void CreateContentButton(Upgradable[] upgradables, string _roomName)
 		{
@@ -34,10 +39,23 @@ namespace ToasterGames
 
 		public void UpdateName(Upgradable upgradable)
 		{
-			upgradableName.text= upgradable.upgradableName;
-			upgradableDiscription.text= upgradable.discription;
-			upgradableLevel.text = upgradable.level.ToString();
-			upgradableIcon.sprite= upgradable.icon;
+			selectedUpgradable = upgradable;
+			upgradableName.text = selectedUpgradable.upgradableName;
+			upgradableDiscription.text = selectedUpgradable.discription;
+			upgradableLevel.text = selectedUpgradable.level.ToString();
+			upgradableIcon.sprite = selectedUpgradable.icon;
+			upgratePrice.text = selectedUpgradable.price.ToString();
+
+			if (wallet.CanBuyMoneyUprgate(selectedUpgradable.price))
+			{
+				upgratePrice.color = Color.green;
+				upgrateButton.interactable = true;
+			}
+			else
+			{
+				upgratePrice.color = Color.red;
+				upgrateButton.interactable = false;
+			}
 		}
 
 		public void DeliteUpgratables()
@@ -50,6 +68,12 @@ namespace ToasterGames
 				}
 				contentCreatedPrefab.Clear();
 			}
+		}
+		public void Upgrate()
+		{
+			wallet.ChangeMoney(-selectedUpgradable.price);
+			selectedUpgradable.Upgrate();
+			UpdateName(selectedUpgradable);
 		}
 	}
 

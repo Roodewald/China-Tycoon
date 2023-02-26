@@ -7,9 +7,7 @@ namespace ToasterGames
 		public static PlayerProfile Instance;
 
 		[SerializeField] UIManager uIManager;
-		private int curretMoney;
-		private int curretDiamonds;
-		private bool showAD;
+		[SerializeField] Wallet wallet;
 	
 
 		private const string saveKey = "mainSave";
@@ -24,13 +22,13 @@ namespace ToasterGames
 		private void Load()
 		{
 			var data = SaveManager.Load<PlayerProfileData>(saveKey);
-			curretMoney = data.curretMoney;
-			curretDiamonds = data.curretDiamonds;
-			showAD = data.showAD;
+			wallet.SetCureentMoney(data.curretMoney);
+			wallet.SetCurretDiamonds(data.curretDiamonds);
+			wallet.SetShowAD(data.showAD);
 			UpdateUI();
 
 		}
-		private void Save()
+		public void Save()
 		{
 			SaveManager.Save(saveKey, GetSaveSnapshot());
 			UpdateUI();
@@ -40,17 +38,17 @@ namespace ToasterGames
 		{
 			var data = new PlayerProfileData()
 			{
-				curretMoney = curretMoney,
-				curretDiamonds = curretDiamonds,
-				showAD = showAD,
+				curretMoney = wallet.GetCurretMoney(),
+				curretDiamonds = wallet.GetCurretDiamonds(),
+				showAD = wallet.GetShowingAD()
 			};
 			return data;
 		}
 		private void UpdateUI()
 		{
 			var uIMoneyPanel = uIManager.uIMoneyPanel;
-			uIMoneyPanel.money.text = curretMoney.ToString();
-			uIMoneyPanel.diamonds.text= curretDiamonds.ToString();
+			uIMoneyPanel.money.text = wallet.GetCurretMoney().ToString();
+			uIMoneyPanel.diamonds.text= wallet.GetCurretDiamonds().ToString();
 		}
 	}
 }
