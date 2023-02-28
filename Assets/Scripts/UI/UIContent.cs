@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Components;
 using UnityEngine.UI;
 
 namespace ToasterGames
@@ -11,7 +13,7 @@ namespace ToasterGames
 		public Transform contentTransform;
 		private List<Content> contentCreatedPrefab = new List<Content>();
 		[SerializeField] private TMP_Text upgradableName;
-		[SerializeField] private TMP_Text roomName;
+		[SerializeField] private LocalizeStringEvent roomName; 
 		[SerializeField] private TMP_Text upgradableDiscription;
 		[SerializeField] private TMP_Text upgradableLevel;
 		[SerializeField] private Image upgradableIcon;
@@ -21,7 +23,7 @@ namespace ToasterGames
 
 		private Upgradable selectedUpgradable;
 
-		public void CreateContentButton(Upgradable[] upgradables, string _roomName)
+		public void CreateContentButton(Upgradable[] upgradables, LocalizedString _roomName)
 		{
 			if (upgradables != null)
 			{
@@ -34,7 +36,8 @@ namespace ToasterGames
 				contentCreatedPrefab[0].button.Select();
 				contentCreatedPrefab[0].OnClick();
 			}
-			roomName.text = _roomName;
+			
+			roomName.StringReference = _roomName;
 		}
 
 		public void UpdateName(Upgradable upgradable)

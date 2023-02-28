@@ -1,10 +1,11 @@
 using UnityEngine;
+using UnityEngine.Localization;
 
 namespace ToasterGames
 {
 	public class Room : MonoBehaviour, IInteractable
 	{
-		public string roomName;
+		public LocalizedString roomName;
 		public Bench[] benchs;
 
 		private UIManager uIManager;

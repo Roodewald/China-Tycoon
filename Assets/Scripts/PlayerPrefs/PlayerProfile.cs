@@ -47,8 +47,8 @@ namespace ToasterGames
 		private void UpdateUI()
 		{
 			var uIMoneyPanel = uIManager.uIMoneyPanel;
-			uIMoneyPanel.money.text = wallet.GetCurretMoney().ToString();
-			uIMoneyPanel.diamonds.text= wallet.GetCurretDiamonds().ToString();
+			uIMoneyPanel.AddMoney(wallet.GetCurretMoney());
+			uIMoneyPanel.AddDiamonds(wallet.GetCurretDiamonds());
 		}
 	}
 }
