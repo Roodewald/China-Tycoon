@@ -9,7 +9,6 @@ namespace ToasterGames
 		public int price;
 
 		public int level;
-		public bool created;
 
 		public Sprite icon;
 
