@@ -8,6 +8,7 @@ namespace ToasterGames
 	{
 		public Texture ico;
 		public GameObject[] quads;
+		public bool counted = false;
 
 		private void Start()
 		{
