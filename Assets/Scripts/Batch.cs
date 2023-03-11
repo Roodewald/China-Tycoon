@@ -10,6 +10,9 @@ namespace ToasterGames
 		public GameObject[] quads;
 		public bool counted = false;
 
+		public int batchID = 0;
+		public int batchCount = 1;
+
 		private void Start()
 		{
 			foreach (GameObject quad in quads)

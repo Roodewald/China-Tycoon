@@ -6,6 +6,7 @@ namespace ToasterGames
 	{
 		public GameObject batch;
 		public Transform  spawnPoint;
+		public int batchId;
 
 		private void Start()
 		{
@@ -17,7 +18,10 @@ namespace ToasterGames
 
 		private void SpawnBatch()
 		{
-			Instantiate(batch, spawnPoint.position, Quaternion.identity).GetComponent<Batch>().ico = icon.texture;
+			Batch _batch = Instantiate(batch, spawnPoint.position, Quaternion.identity).GetComponent<Batch>();
+			_batch.ico = icon.texture;
+			_batch.batchID = batchId;
+			_batch.batchCount = 1;
 		}
 	}
 

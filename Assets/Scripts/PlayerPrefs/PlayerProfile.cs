@@ -8,9 +8,11 @@ namespace ToasterGames
 
 		[SerializeField] UIManager uIManager;
 		[SerializeField] Wallet wallet;
+		[SerializeField] Stock stock;
+		
 	
 
-		private const string saveKey = "mainSave";
+		private const string saveKey = "mainSave1";
 
 
 		private void Awake()
@@ -25,6 +27,7 @@ namespace ToasterGames
 			wallet.SetCureentMoney(data.currentMoney);
 			wallet.SetCurretDiamonds(data.currentDiamonds);
 			wallet.SetShowAD(data.showAD);
+			stock.storage = data.storage;
 			UpdateUI();
 
 		}
@@ -40,7 +43,9 @@ namespace ToasterGames
 			{
 				currentMoney = wallet.GetCurretMoney(),
 				currentDiamonds = wallet.GetCurretDiamonds(),
-				showAD = wallet.GetShowingAD()
+				showAD = wallet.GetShowingAD(),
+				storage = stock.storage,
+				
 			};
 			return data;
 		}

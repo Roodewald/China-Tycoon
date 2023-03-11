@@ -9,6 +9,7 @@ namespace ToasterGames
 		public int currentMoney;
 		public int currentDiamonds;
 		public bool showAD;
+		public int[] storage = new int[10];
 	
 		public PlayerProfileData()
 		{

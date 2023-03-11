@@ -8,7 +8,8 @@ namespace ToasterGames
 	public class StockTrigger : MonoBehaviour
 	{
 		private List<Batch> aviableBatches = new();
-		[SerializeField]private Worker[] workerks;
+		[SerializeField] private Stock stock;
+		[SerializeField] private Worker[] workerks;
 
 		private void OnTriggerEnter(Collider other)
 		{
@@ -18,15 +19,16 @@ namespace ToasterGames
 
 				if (!batch.counted)
 				{
+					stock.AddBatchInStock(batch);
 					batch.GetComponent<Rigidbody>().isKinematic = true;
-					batch.counted= true;
+					batch.counted = true;
 					aviableBatches.Add(batch);
-				}	
+				}
 			}
 		}
 		private void Update()
 		{
-			if (aviableBatches.Count>0)
+			if (aviableBatches.Count > 0)
 			{
 				foreach (Worker worker in workerks)
 				{
