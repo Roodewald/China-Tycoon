@@ -14,10 +14,9 @@ namespace ToasterGames
 
 		public void Interact()
 		{
-			uIManager.SetActivePanel(1);
+			uIManager.SetActivePanel(2);
 
 			
-
 			CameraController.instance.SetShowingObject(gameObject);
 		}
 
