@@ -23,7 +23,7 @@ namespace ToasterGames
 		public void AddBatchInStock(Batch batch)
 		{
 			storage[batch.batchID] += batch.batchCount;
-			PlayerProfile.Instance.Save();
+			PlayerProfile.instance.Save();
 		}
 	}
 }

@@ -4,37 +4,37 @@ namespace ToasterGames
 {
 	public class Wallet : MonoBehaviour
 	{
-		public static Wallet Instance;
+		public static Wallet instance;
 
-		private int curretMoney;
-		private int curretDiamonds;
-		private int curretEnergy;
+		private int currentMoney;
+		private int currentDiamonds;
+		private int currentEnergy;
 		private bool showAD;
 
 		private void Awake()
 		{
-			Instance = this;
+			instance = this;
 		}
 
-		public int GetCurretMoney() => curretMoney;
-		public void SetCureentMoney(int setMoney) => curretMoney = setMoney;
-		public bool CanBuyMoneyUprgate(int price) => curretMoney >= price;
+		public int GetCurrentMoney() => currentMoney;
+		public void SetCurrentMoney(int setMoney) => currentMoney = setMoney;
+		public bool CanBuyMoneyUpgrade(int price) => currentMoney >= price;
 		public void ChangeMoney(int addedMoney) {
-			curretMoney += addedMoney;
-			PlayerProfile.Instance.Save();
+			currentMoney += addedMoney;
+			PlayerProfile.instance.Save();
 		}
 
-		public int GetCurretDiamonds() => curretDiamonds;
-		public void SetCurretDiamonds(int setDiamonds) => curretDiamonds = setDiamonds;
+		public int GetCurrentDiamonds() => currentDiamonds;
+		public void SetCurrentDiamonds(int setDiamonds) => currentDiamonds = setDiamonds;
 		public void ChangeDiamonds(int addedDiamonds)
 		{
-			curretDiamonds += addedDiamonds;
-			PlayerProfile.Instance.Save();
+			currentDiamonds += addedDiamonds;
+			PlayerProfile.instance.Save();
 		}
 
-		public int GetEnergy() => curretEnergy;
-		public void SetEnergy(int setEnergy) => curretEnergy = setEnergy;
-		public void ChangeEnergy(int addedEnergy) => curretEnergy += addedEnergy;
+		public int GetEnergy() => currentEnergy;
+		public void SetEnergy(int setEnergy) => currentEnergy = setEnergy;
+		public void ChangeEnergy(int addedEnergy) => currentEnergy += addedEnergy;
 
 		public bool GetShowingAD() => showAD;
 		public void SetShowAD(bool _showAD) => showAD = _showAD;

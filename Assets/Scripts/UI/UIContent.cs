@@ -49,7 +49,7 @@ namespace ToasterGames
 			upgradableIcon.sprite = selectedUpgradable.icon;
 			upgratePrice.text = selectedUpgradable.price.ToString();
 
-			if (wallet.CanBuyMoneyUprgate(selectedUpgradable.price))
+			if (wallet.CanBuyMoneyUpgrade(selectedUpgradable.price))
 			{
 				upgratePrice.color = Color.green;
 				upgrateButton.interactable = true;
